@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/welcome', function () {
-    return view('welcome');
+Route::get('/', function () {
+    return view('index');
 });
-Route::get('/',[StudentController::class,'index'])->name('Crud.index');
+Route::get('/index',[StudentController::class,'index'])->name('Crud.index');
 Route::get('/create',[StudentController::class,'create'])->name('Crud.create');
 Route::post('/store',[StudentController::class,'store'])->name('Crud.store');
 Route::get('/edit/{id}',[StudentController::class,'edit'])->name('Crud.edit');
@@ -34,3 +34,4 @@ Route::middleware([
     })->name('dashboard');
 });
 Route::get('admin/dashboard', [HomeController::class, 'admin_dash'])->name('admin.dashboard');
+

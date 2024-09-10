@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admincontroller;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/index',[StudentController::class,'index'])->name('Crud.index');
+Route::get('/index',[Admincontroller::class,'index'])->name('Crud.index');
 Route::get('/create',[StudentController::class,'create'])->name('Crud.create');
 Route::post('/store',[StudentController::class,'store'])->name('Crud.store');
 Route::get('/edit/{id}',[StudentController::class,'edit'])->name('Crud.edit');
